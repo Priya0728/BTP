@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="IncidentService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Incidents" EntityType="IncidentService.Incidents"/>
+            </EntityContainer>
+            <EntityType Name="Incidents">
+                <Key>
+                    <PropertyRef Name="incidentNumber"/>
+                </Key>
+                <Property Name="incidentNumber" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="createdDate" Type="Edm.Date"/>
+                <Property Name="appID" Type="Edm.String"/>
+                <Property Name="appName" Type="Edm.String"/>
+                <Property Name="appType" Type="Edm.String"/>
+                <Property Name="assignmentGroup" Type="Edm.String"/>
+                <Property Name="itService" Type="Edm.String"/>
+                <Property Name="status" Type="Edm.String"/>
+            </EntityType>
+            <Annotations Target="IncidentService.Incidents/incidentNumber">
+                <Annotation Term="Common.Label" String="Incident Number"/>
+            </Annotations>
+            <Annotations Target="IncidentService.Incidents/createdDate">
+                <Annotation Term="Common.Label" String="Created Date"/>
+            </Annotations>
+            <Annotations Target="IncidentService.Incidents/appID">
+                <Annotation Term="Common.Label" String="App ID"/>
+            </Annotations>
+            <Annotations Target="IncidentService.Incidents/appName">
+                <Annotation Term="Common.Label" String="App Name"/>
+            </Annotations>
+            <Annotations Target="IncidentService.Incidents/appType">
+                <Annotation Term="Common.Label" String="App Type"/>
+            </Annotations>
+            <Annotations Target="IncidentService.Incidents/assignmentGroup">
+                <Annotation Term="Common.Label" String="Assignment Group"/>
+            </Annotations>
+            <Annotations Target="IncidentService.Incidents/itService">
+                <Annotation Term="Common.Label" String="IT Service"/>
+            </Annotations>
+            <Annotations Target="IncidentService.Incidents/status">
+                <Annotation Term="Common.Label" String="Status"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
